@@ -1,54 +1,48 @@
 <form class="ui form segment">
   <h4 class="ui dividing header" style="text-align: center">Formulario para solicitar viajes:</h4>
 
-  <div class="ui three column divided grid segment">
-    <div class="column">
+  <div class="ui fields">
+    <div class="six wide field">
       <label for="name">Nombre:</label>
       <input name="name" placeholder="nombre completo">
     </div>
-    <div class="column">
+    <div class="six wide field">
       <label for="email">Email:</label>
       <input name="email">
     </div>
-    <div class="column">
-      <div class="fields">
-        <div class="field">
-          <div class="ui toggle checkbox">
-            <input type="checkbox" name="chkbProfesor" onclick="chkbVerify">            
-            <label>Profesor</label>
-          </div>
+    <div class="fields">
+      <div class="field">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="chkbProfesor" onclick="chkbVerify">
+          <label>Profesor</label>
         </div>
-        <div class="field">
-          <div class="ui toggle checkbox">
-            <input type="checkbox" name="chkbAdministracion" onclick="chkbVerify">
-            <label>Administración</label>
-          </div>
+      </div>
+      <div class="field">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="chkbAdministracion" onclick="chkbVerify">
+          <label>Administración</label>
         </div>
       </div>
     </div>
   </div>
   <!--########## /First Row ##########-->
 
-  <div class="ui column segment">
+  <div class="ui field">
     <label for="actividad">Nombre, descripción y propósito de la actividad:</label>
     <textarea name="actividad" style="resize:none"></textarea>
   </div>
   <!--########## /Second Row ##########-->
 
-  <div class="ui four column divided grid segment">
-    <div class="column">
-      <div class="field">
-        <label for="fecha-hr">Fecha y hora de la actividad:</label>
-        <input name="fecha-hr" type="date">
-      </div>
+  <div class="ui fields">
+    <div class="three wide field">
+      <label for="fecha-hr">Fecha y hora de la actividad:</label>
+      <input name="fecha-hr" type="date">
     </div>
-    <div class="column">
-      <div class="field">
-        <label for="participantes">Cantidad de participantes:</label>
-        <input name="participantes" type="number" min="1" max="90">
-      </div>
+    <div class="three wide field">
+      <label for="participantes">Cantidad de participantes:</label>
+      <input name="participantes" type="number" min="1" max="90">
     </div>
-    <div class="column">
+    <div class="three wide field">
       <div class="ui list">
         <div class="item">
           <h5 style="text-align: center">Servicio que solicita:</h5>
@@ -69,7 +63,7 @@
         </div>
       </div>
     </div>
-    <div class="column">
+    <div class="two wide field">
       <div class="ui relaxed list">
         <div class="item">
           <div class="ui master checkbox">
@@ -114,8 +108,8 @@
   </div>
   <!--########## /Third Row ##########-->
 
-  <div class="ui column segment">
-    <label for="detalles">Detalles (si aplican):</label>
+  <div class="ui field">
+    <label for="detalles">Detalles:</label>
     <textarea name="detalles" placeholder="ej. hora de salida y regreso, costo" style="resize:none"></textarea>
   </div>
   <!--########## /Fourth Row ##########-->
@@ -133,8 +127,8 @@
   var profesor = document.getElementByName("chkbProfesor");
   var administracion = document.getElementByName("chkbAdministracion");
 
-//   profesor.addEventListener("change", chkbVerify());
-//   administracion.addEventListener("change", chkbVerify());
+  //   profesor.addEventListener("change", chkbVerify());
+  //   administracion.addEventListener("change", chkbVerify());
 
   function chkbVerify() {
     if (profesor.checked) {
@@ -144,6 +138,7 @@
       profesor.removeAttribute("checked")
     }
   }
+
 </script>
 
 <!--^^^ Temp Recylce ^^^-->
