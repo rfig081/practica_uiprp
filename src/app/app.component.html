@@ -1,7 +1,127 @@
-<app-login></app-login>
-<app-menu></app-menu>
-<app-solicitud></app-solicitud>
+<form class="ui form segment">
+  <h4 class="ui dividing header" style="text-align: center">Formulario para solicitar viajes:</h4>
 
+  <div class="ui fields">
+    <div class="six wide field">
+      <label for="name">Nombre:</label>
+      <input name="name" placeholder="nombre completo">
+    </div>
+    <div class="six wide field">
+      <label for="email">Email:</label>
+      <input name="email">
+    </div>
+    <div class="fields">
+      <div class="field">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="chkbProfesor" onclick="chkbVerify">
+          <label>Profesor</label>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui toggle checkbox">
+          <input type="checkbox" name="chkbAdministracion" onclick="chkbVerify">
+          <label>Administración</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--########## /First Row ##########-->
+
+  <div class="ui field">
+    <label for="actividad">Nombre, descripción y propósito de la actividad:</label>
+    <textarea name="actividad" style="resize:none"></textarea>
+  </div>
+  <!--########## /Second Row ##########-->
+
+  <div class="ui fields">
+    <div class="three wide field">
+      <label for="fecha-hr">Fecha y hora de la actividad:</label>
+      <input name="fecha-hr" type="date">
+    </div>
+    <div class="three wide field">
+      <label for="participantes">Cantidad de participantes:</label>
+      <input name="participantes" type="number" min="1" max="90">
+    </div>
+    <div class="three wide field">
+      <div class="ui list">
+        <div class="item">
+          <h5 style="text-align: center">Servicio que solicita:</h5>
+          <div class="list">
+            <div class="item">
+              <div class="ui child toggle checkbox">
+                <input type="checkbox" checked="checked" name="PR">
+                <label>En Puerto Rico</label>
+              </div>
+            </div>
+            <div class="item">
+              <div class="ui child toggle checkbox">
+                <input type="checkbox" name="NPR">
+                <label>Fuera de Puerto Rico</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="two wide field">
+      <div class="ui relaxed list">
+        <div class="item">
+          <div class="ui master checkbox">
+            <input type="checkbox" name="servicios">
+            <label>Todos</label>
+          </div>
+          <div class="list">
+            <div class="item">
+              <div class="ui child checkbox">
+                <input type="checkbox" name="transportacion">
+                <label>Transportación</label>
+              </div>
+            </div>
+            <div class="item">
+              <div class="ui child checkbox">
+                <input type="checkbox" name="peajes">
+                <label>Pago de Peajes</label>
+              </div>
+            </div>
+            <div class="item">
+              <div class="ui child checkbox">
+                <input type="checkbox" name="hospedaje">
+                <label>Hospedaje</label>
+              </div>
+            </div>
+            <div class="item">
+              <div class="ui child checkbox">
+                <input type="checkbox" name="dieta">
+                <label>Dieta</label>
+              </div>
+            </div>
+            <div class="item">
+              <div class="ui child checkbox">
+                <input type="checkbox" name="miscelaneos">
+                <label>Gastos Misceláneos</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--########## /Third Row ##########-->
+
+  <div class="ui field">
+    <label for="detalles">Detalles:</label>
+    <textarea name="detalles" placeholder="ej. hora de salida y regreso, costo" style="resize:none"></textarea>
+  </div>
+  <!--########## /Fourth Row ##########-->
+
+  <div class="ui animated green button right floated" tabindex="0">
+    <div class="visible content">Enviar Solicitud</div>
+    <div class="hidden content">
+      <i class="send icon"></i>
+    </div>
+  </div>
+</form>
+<app-login></app-login>
 
 <!--***** Scripts Here *****-->
 <script type="text/javascript">
@@ -21,4 +141,83 @@
   }
 
   $('.ui.modal').modal('show');
+
 </script>
+
+<!--^^^ Temp Recylce ^^^-->
+<!--<div class="fields">
+    <div class="three wide field">
+      <label for="fecha-hr">Fecha y hora de la actividad:</label>
+      <input name="fecha-hr" type="date">
+    </div>
+    <div class="two wide field">
+      <label for="participantes">Cantidad de participantes:</label>
+      <input name="participantes" type="number" min="1" max="90">
+    </div>
+
+    <div class="two wide field"></div>
+
+    <div class="ui list three wide field">
+      <div class="item">
+        <h5 class="ui dividing header" style="text-align: center">Servicio que solicita:</h5>
+        <div class="list">
+          <div class="item">
+            <div class="ui child toggle checkbox">
+              <input type="checkbox" checked="checked" name="PR">
+              <label>En Puerto Rico</label>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui child toggle checkbox">
+              <input type="checkbox" name="NPR">
+              <label>Fuera de Puerto Rico</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="field"></div>
+
+    <div class="ui relaxed list two wide field">
+      <div class="item">
+        <div class="ui master checkbox">
+          <input type="checkbox" name="servicios">
+          <label>Todos</label>
+        </div>
+        <div class="list">
+          <div class="item">
+            <div class="ui child checkbox">
+              <input type="checkbox" name="transportacion">
+              <label>Transportación</label>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui child checkbox">
+              <input type="checkbox" name="peajes">
+              <label>Pago de Peajes</label>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui child checkbox">
+              <input type="checkbox" name="hospedaje">
+              <label>Hospedaje</label>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui child checkbox">
+              <input type="checkbox" name="dieta">
+              <label>Dieta</label>
+            </div>
+          </div>
+          <div class="item">
+            <div class="ui child checkbox">
+              <input type="checkbox" name="miscelaneos">
+              <label>Gastos Misceláneos</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> -->

@@ -5,15 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './menu/menu.component';
-import { SolicitudComponent } from './solicitud/solicitud.component';
+import { DataEntryComponent } from './data-entry/data-entry.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    MenuComponent,
-    SolicitudComponent
+    DataEntryComponent
   ],
   imports: [
     BrowserModule,
