@@ -11,7 +11,7 @@ export class Solicitud {
         try{
             MongoClient.connect(url, (err, db) =>{
                 assert.equal(err, null);
-                this.insertarSolicitud(db, () => {db.close()});
+                this.insertarSolicitud(db, () => {db.close(); });
             });
         }catch {
             console.log('Ups. Hubo un error trantado de guardar los datos al Database');
