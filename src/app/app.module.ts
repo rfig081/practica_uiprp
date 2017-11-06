@@ -12,31 +12,38 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { SolicitudComponent } from './solicitud/solicitud.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { DataEntryComponent } from './data-entry/data-entry.component';
+
+/**
+ * Routes are set here:
+ */
+const routes: Routes = [
+    { path: '', redirectTo: 'reportes', pathMatch: 'full' },
+    { path: 'reportes', component: ReportesComponent },    
+    { path: 'archivar', component: DataEntryComponent },    
+    { path: 'solicitud', component: SolicitudComponent }
+]
+
+
 
 @NgModule({
     declarations: [
         AppComponent,
         LoginComponent,
         MenuComponent,
-        SolicitudComponent
+        SolicitudComponent,
+        DataEntryComponent,
+        ReportesComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        RouterModule.forRoot(routes),
     ],
     providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-/**
- * Routes are set here:
- */
-const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: MenuComponent },
-    //{ path: 'archivar', component: Data-entryComponent },
-    //{ path: 'informes', component: InformesComponent }
-    { path: 'solicitud', component: SolicitudComponent }
-]
