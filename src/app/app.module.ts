@@ -1,6 +1,7 @@
 import {
     RouterModule,
-    Routes
+    Routes,
+    RouterLinkActive
 } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
