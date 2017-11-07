@@ -1,47 +1,81 @@
-<form class="ui form">
-  <h3 class="ui dividing header">Entrada de Datos: </h3>
+<form class="ui form segment">
+  <h4 class="ui dividing header" style="text-align: center">Archivar Datos:</h4>
+  <!-- row 1 -->
   <div class="ui fields">
     <div class="six wide field">
       <label for="nombre-sol">Nombre Completo:</label>
-      <input type="text" name="nombre-sol" placeholder="Nombre y Apellidos">
+      <input type="text" placeholder="Nombre y Apellidos del Solicitante">
     </div>
-    <div class="six wide field">
+    <div class="five wide field">
+        <label for="nombre-sol">Email:</label>
+        <input type="text" placeholder="username@mail.com">
+      </div>
+
+    <div class="two wide field">
+      <label for="participantes">Cantidad de Participantes: </label>
+      <input type="number">
+    </div>
+
+  </div>
+  <!-- row 2 -->
+  <div class="ui fields">
+    <div class="sixteen wide field">
       <label for="titulo-act">Titulo de Actividad:</label>
-      <input type="text" name="nombre-act" placeholder="Titulo de la Actividad">
+      <input type="text" placeholder="Titulo de la Actividad">
     </div>
-    <div class="six wide field">
-      <label for="participantes">Participantes: </label>
-      <input type="number" name="participantes">
+
+  </div>
+  <!-- row 3 -->
+  <div class="ui fields">
+    <div class="sixteen wide field">
+      <label for="detalles-act">Detalles:</label>
+      <textarea style="resize:none"></textarea>
     </div>
-    <div class="six wide field">
+  </div>
+  <!-- row 4 -->
+  <div class="ui fields">
+    <div class="two wide field">
       <label for="gastos">Dinero Otorgado:</label>
       <input type="number" name="gastos">
     </div>
-    <!-- fechas -->
-    <div class="six wide field">
+    <div class="three wide field">
       <label for="fdesde">Desde:</label>
-      <input name="fdesde" type="date">
+      <input type="date">
     </div>
-    <div class="six wide field">
-      <label for="fhasta">Hasta:</label>
-      <input name="fhasta" type="date">
-    </div>
+  </div>
+
+  <div class="ui fields">
     <div class="ui form segment">
       <div class="grouped fields">
-        <label>Servicios</label>
+        <label>Servicios:</label>
         <div class="field">
-          <div class="ui radio checkbox">
-            <input name="dentroPR" checked="checked" type="radio">
+          <div class="ui checkbox">
+            <input checked="checked" type="radio">
             <label>Dentro de PR</label>
           </div>
         </div>
         <div class="field">
-          <div class="ui radio checkbox">
-            <input name="afueraPR" type="radio">
+          <div class="ui checkbox">
+            <input type="radio">
             <label>Fuera de PR</label>
           </div>
         </div>
       </div>
+    </div>
+    <!-- fechas -->
+    <div class="three wide field">
+      <label for="fhasta">Hasta:</label>
+      <input type="date">
+    </div>
+  </div>
+
+
+
+  <!--submit row -->
+  <div class="ui animated yellow button right floated" tabindex="0">
+    <div class="visible content">Guardar Datos</div>
+    <div class="hidden content">
+      <i class="send icon"></i>
     </div>
   </div>
 </form>
