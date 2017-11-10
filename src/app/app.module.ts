@@ -1,3 +1,4 @@
+// Libraries Imports
 import {
     RouterModule,
     Routes,
@@ -8,7 +9,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-
+// Components Imports
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
