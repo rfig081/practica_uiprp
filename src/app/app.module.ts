@@ -17,6 +17,21 @@ import { SolicitudComponent } from './solicitud/solicitud.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { DataEntryComponent } from './data-entry/data-entry.component';
 
+
+// Firebase Stuff
+import { AngularFireModule  } from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireAuth} from 'angularfire2/auth';
+export const firebaseConfig = {
+  apiKey: 'AIzaSyB01Z98DWnc1iM0rlnYOOlmx-hZie3VTK4',
+  authDomain: 'practice-97ad0.firebaseapp.com',
+  databaseURL: 'https://practice-97ad0.firebaseio.com',
+  projectId: 'practice-97ad0',
+  storageBucket: 'practice-97ad0.appspot.com',
+  messagingSenderId: '306464265919'
+};
+
 /**
  * Routes are set here:
  */
@@ -43,8 +58,10 @@ const routes: Routes = [
         FormsModule,
         HttpModule,
         RouterModule.forRoot(routes),
+        AngularFireModule.initializeApp(firebaseConfig),
+        AngularFirestoreModule,
     ],
-    providers: [],
+    providers: [AngularFireAuth],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

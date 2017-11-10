@@ -2,15 +2,15 @@
   <div class="header">Iniciar Sesión</div>
   <div class="content">
     <div class="ui left icon input">
-      <input type="text" placeholder="Usuario" />
+      <input type="text" placeholder="Email" [(ngModel)]="email"/>
       <i class="user icon"></i>
     </div>
     <div class="ui left icon input">
-      <input type="password" placeholder="Contraseña" />
+      <input type="password" placeholder="Contraseña" [(ngModel)]="password" />
       <i class="keyboard icon"></i>
     </div>
   </div>
   <div class="actions">
-    <div class="ui button positive">Iniciar Sección</div>    
+    <div class="ui button positive" (click)="userLogin()" >Iniciar Sección</div>    
   </div>
 </div>
