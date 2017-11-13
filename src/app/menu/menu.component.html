@@ -1,16 +1,16 @@
 <div class="ui pointing menu">
-  <a class="item" [routerLink]="['/reportes']" routerLinkActive="active">
+  <a class="item" *ngIf="isLoggin" [routerLink]="['/reportes']" routerLinkActive="active">
     Reportes
   </a>
-  <a class="item" [routerLink]="['/archivar']" routerLinkActive="active">
+  <a class="item" *ngIf="isLoggin" [routerLink]="['/archivar']" routerLinkActive="active">
     Archivar
   </a>
-  <a class="item" [routerLink]="['/solicitud']" routerLinkActive="active">
+  <a class="item" *ngIf="isLoggin" [routerLink]="['/solicitud']" routerLinkActive="active">
     Solicitud
   </a>
 
   <div class="right menu">
-    <!-- <p class="item">{{  }}</p> -->
+    <a class="item" *ngIf="userEmail">{{ userEmail }}</a>
     <a class="ui item" (click)="userLogout()" >
       Logout
     </a>

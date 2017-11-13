@@ -32,13 +32,18 @@ export const firebaseConfig = {
   messagingSenderId: '306464265919'
 };
 
+// Custom Service
+import {AuthService} from './providers/auth.service';
+import { LoginActivateGuard } from './providers/login-activate.guard';
+
 /**
  * Routes are set here:
  */
 const routes: Routes = [
-    { path: '', redirectTo: 'reportes', pathMatch: 'full' },
-    { path: 'reportes', component: ReportesComponent },    
-    { path: 'archivar', component: DataEntryComponent },    
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    { path: 'login', component: LoginComponent },
+    { path: 'reportes', component: ReportesComponent, canActivate: [LoginActivateGuard] },    
+    { path: 'archivar', component: DataEntryComponent, canActivate: [LoginActivateGuard]},    
     { path: 'solicitud', component: SolicitudComponent }
 ]
 
@@ -61,7 +66,7 @@ const routes: Routes = [
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFirestoreModule,
     ],
-    providers: [AngularFireAuth],
+    providers: [AngularFireAuth, AuthService, LoginActivateGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

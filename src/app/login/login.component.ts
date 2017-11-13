@@ -3,6 +3,8 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} 
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import {AuthService} from '../providers/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,7 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
 
-  constructor(private afa: AngularFireAuth) {
+  constructor(public as: AuthService, private router: Router) {
    }
 
   ngOnInit() {
@@ -23,16 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   userLogin() {
-    this.afa.auth.signInWithEmailAndPassword(this.email, this.password)
-    .then(function(user){
-      console.log('User logged in: ' + user.email);
-      this.email = '';
-      this.password = '';
-    })
-    .catch(function(error){
-        const errorCode = error.code;
-        const errorMessage = error.message;
-    });
+    this.as.loginWithEmail(this.email, this.password);
   }
 
 

@@ -1,3 +1,10 @@
-<p>
-  reportes esta funcionando.
-</p>
+<div class="ui segment">
+    <h3 class="ui dividing header" style="text-align: center">Reportes</h3>
+    <div class="ui relaxed items">
+        <div class="item" *ngFor="let reporte of reportes | async">
+            <div class="middle aligned content">
+                <a class="header">{{reporte.name}}</a>
+            </div>
+        </div>
+    </div>
+</div>

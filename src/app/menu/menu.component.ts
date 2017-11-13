@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthService } from '../providers/auth.service';
+import { Router } from '@angular/router';
+import { SimpleChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-menu',
@@ -8,17 +10,27 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private afa: AngularFireAuth) { }
+  private isLoggin: boolean;
+  private userEmail: string;
+
+  constructor(public authService: AuthService) { 
+      
+  }
 
   ngOnInit() {
+    this.authService.afu.authState.subscribe(auth => {
+      if(auth == null) {
+          this.isLoggin = false;
+          this.userEmail = '';
+      }else {
+          this.isLoggin = true;
+          this.userEmail = auth.email;
+      }
+   });
   }
 
   userLogout() {
-    this.afa.auth.signOut().then(function(){
-      console.log('Logout Complete');
-    }).catch(function(err){
-      console.log(err);
-    });
+    this.authService.logout();
   }
 
 }
