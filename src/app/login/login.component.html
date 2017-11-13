@@ -1,4 +1,4 @@
-<div class="ui small modal">
+<!-- <div class="ui small modal">
   <div class="header">Iniciar Sesión</div>
   <div class="content">
     <div class="ui left icon input">
@@ -13,4 +13,25 @@
   <div class="actions">
     <div class="ui button positive" (click)="userLogin()" >Iniciar Sección</div>    
   </div>
+</div> -->
+
+
+<div class="login-body">
+  <form class="ui form login-card">
+    <h3 align="center">Iniciar Sesión</h3>
+    <div class="ui six wide field">
+      <i class="user icon"></i>
+      <input type="email" placeholder="Email" [(ngModel)]="email">
+    </div>
+    <div class="ui six wide field">
+      <i class="keyboard icon"></i>
+      <input type="password" placeholder="Contraseña" [(ngModel)]="password">
+    </div>
+    <div class="ui animated button right floated" tabindex="0" (click)="userLogin()">
+      <div class="visible content">Iniciar Sesión</div>
+      <div class="hidden content">
+        <i class="send icon"></i>
+      </div>
+    </div>
+  </form>
 </div>
